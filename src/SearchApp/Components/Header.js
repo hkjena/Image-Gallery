@@ -7,7 +7,7 @@ const Header = () => {
       <div
         className={
           visible === 'none'
-            ? 'hidden'
+            ? 'text-transparent h-0 ease-out duration-500'
             : 'shadow-md bg-purple-200 px-4 py-3 rounded relative'
         }
         role='alert'
@@ -15,7 +15,11 @@ const Header = () => {
         <h1 className='text-center mr-8'>Search Over 1,000,000 Stock Photos</h1>
         <span className='absolute top-0 bottom-0 right-0 px-4 py-3'>
           <svg
-            className='fill-current h-6 w-6 text-red-500'
+            className={
+              visible === 'none'
+                ? 'text-transparent h-0 ease-out duration-500'
+                : 'fill-current h-6 w-6 text-red-500 hover:text-red-900'
+            }
             role='button'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 20 20'

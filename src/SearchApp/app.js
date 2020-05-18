@@ -11,7 +11,9 @@ import { useEffect } from 'react';
 const App = () => {
   const [photos, setPhotos] = useState([]);
   const [visibility, setVisibility] = useState(true);
+  const [spin, setSpin] = useState(true);
   const formSubmit = async term => {
+    setSpin(false);
     setPhotos([]);
     setVisibility(false);
     const response = await unsplash.get('/search/photos', {
@@ -19,6 +21,7 @@ const App = () => {
     });
     const photos = await response.data.results;
     if (photos.length === 0) setVisibility('no');
+    setSpin(true);
     setPhotos(photos);
   };
   useEffect(() => {
@@ -28,7 +31,9 @@ const App = () => {
         params: { count: 10 },
       });
       const photos = await response.data;
-      if (photos.length === 0) setVisibility('no');
+      if (photos.length === 0) {
+        setVisibility('no');
+      }
       setPhotos(photos);
     };
     getPhotos();
@@ -37,7 +42,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <SearchBar OnSubmit={formSubmit} />
+      <SearchBar OnSubmit={formSubmit} visibility={spin} />
       {visibility === 'no' ? (
         <NotFound />
       ) : photos.length ? (

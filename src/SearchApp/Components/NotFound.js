@@ -10,6 +10,17 @@ const NotFound = () => {
           height: 'calc(100vh - 140px)',
         }}
       >
+        <h2
+          className='font-medium absolute text-purple-700 sm:text-lg  md:text-lg lg:text-xl xl:text-2xl'
+          style={{
+            position: 'absolute',
+            top: '70%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        >
+          No Image Found...
+        </h2>
         <svg
           id='9af98f83-10c5-4067-bc84-20554b2827d8'
           data-name='Layer 1'
