@@ -6,7 +6,7 @@ const ImageCard = ({ image }) => {
   const [Span, SetSpan] = useState(0);
   useEffect(() => {
     ImageRef.current.addEventListener('load', () =>
-      SetSpan(Math.ceil(ImageRef.current.clientHeight / 10) + 1)
+      SetSpan(Math.ceil(ImageRef.current.clientHeight / 10))
     );
   }, [ImageRef]);
   return (
