@@ -18,7 +18,7 @@ const ImageCard = ({ image }) => {
         <img
           ref={ImageRef}
           className='w-full relative'
-          src={urls.thumb}
+          src={urls.regular}
           alt={description}
         />
         <div
