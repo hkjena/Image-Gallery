@@ -1,5 +1,4 @@
 {
-  "homepage": "http://hkjena.github.io/ImageGallery",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -20,8 +19,6 @@
     "tailwindcss": "^1.4.6"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "npm run watch:css && react-scripts start",
     "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
