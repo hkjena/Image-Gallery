@@ -8,7 +8,7 @@ const ImageList = ({ photos }) => {
         className='grid mb-20 col-gap-1 px-2'
         style={{
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr)',
-          gridAutoRows: '10px',
+          gridAutoRows: '1px',
           placeItems: 'center',
         }}
       >
