@@ -17,7 +17,7 @@ const App = () => {
     setPhotos([]);
     setVisibility(false);
     const response = await unsplash.get('/search/photos', {
-      params: { query: term.trim(),count: 15 },
+      params: { query: term.trim(),count: 10 },
     });
     const photos = await response.data.results;
     if (photos.length === 0) setVisibility('no');
@@ -28,7 +28,7 @@ const App = () => {
     setVisibility(false);
     const getPhotos = async () => {
       const response = await unsplash.get('/photos/random', {
-        params: { count: 15 },
+        params: { count: 10 },
       });
       const photos = await response.data;
       if (photos.length === 0) {
