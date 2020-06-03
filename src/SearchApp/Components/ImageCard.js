@@ -32,19 +32,6 @@ const ImageCard = ({ image }) => {
           </div>
         </figure>
       </div>
-      {/* <div className='hover figure'>
-        <figure>
-          <img
-            ref={ImageRef}
-            className='w-full h-auto rounded shadow-full'
-            style={{
-              height: 'auto',
-              marginBottom: '0.5vw',
-            }}
-            src={urls.thumb}
-            alt={description}
-          />
-        </figure> */}
     </>
   );
 };
