@@ -2,6 +2,93 @@ input:focus {
   width: 80%;
   outline: none;
 }
+.photos {
+  column-count: 4;
+  line-height: 0;
+  column-gap: 0.5vw;
+  margin: 0 5px;
+  margin-bottom: 50px;
+}
+@media (max-width: 1200px) {
+  #photos {
+    column-count: 4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+    column-count: 3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+    column-count: 2;
+  }
+}
+@media (max-width: 500px) {
+  #photos {
+    column-count: 1;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+    column-count: 1;
+    margin-bottom: 70px;
+  }
+}
+
+/* Shine */
+.hover figure {
+  position: relative;
+  cursor: pointer;
+}
+.hover figure::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.hover figure:hover::before {
+  -webkit-animation: circle 0.75s;
+  animation: circle 1s;
+}
+@keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 110%;
+    height: 110%;
+    opacity: 0;
+  }
+}
+
+/* Shine End */
+/* Likes Button */
+div.likes {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+}
+
+figure:hover > div.likes {
+  cursor: pointer;
+  opacity: 1;
+}
+/* Likes Button end */
 .spinner1 {
   position: absolute;
   top: 50%;
