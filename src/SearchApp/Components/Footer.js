@@ -9,7 +9,7 @@ const Footer = () => {
       <span>
         By{' '}
         <a
-          href='https://twitter.com/Harekrishnajena'
+          href='https://twitter.com/dev_hkjena'
           target='_blank'
           className='hover:underline hover:text-purple-700'
         >
