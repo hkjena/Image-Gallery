@@ -11,6 +11,7 @@ const Footer = () => {
         <a
           href='https://twitter.com/dev_hkjena'
           target='_blank'
+          rel="noopener noreferrer"
           className='hover:underline hover:text-purple-700'
         >
           Harekrishna Jena
