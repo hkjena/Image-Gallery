@@ -6,7 +6,7 @@ import Spinner from './Components/Spinner/Spinner';
 import Header from './Components/Header';
 import NotFound from './Components/NotFound';
 import Footer from './Components/Footer';
-import SkeletonLoader from './Components/SkeletonLoader/index';
+// import SkeletonLoader from './Components/SkeletonLoader/index';
 import { useEffect } from 'react';
 
 const App = () => {
