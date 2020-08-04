@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ImageCard = ({ image }) => {
   const { urls, description, likes } = image;
