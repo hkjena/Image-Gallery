@@ -1,12 +1,12 @@
 const ImageCard = ({ image }) => {
-  const { urls, description, likes } = image;
+  const { urls, alt_description, likes, links } = image;
   return (
     <>
       <div className='hover column'>
         <figure className='relative'>
           <img
             src={urls.regular}
-            alt={description}
+            alt={alt_description}
             className='w-full h-auto rounded shadow-full'
             style={{
               height: "auto",
@@ -33,6 +33,24 @@ const ImageCard = ({ image }) => {
               <span className='text-xl'>0</span>
             )}
           </div>
+          <a href={`${links?.download}&force=true`} download>
+            <div className='downloads text-white bg-black bg-opacity-50 rounded px-2 py-2'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                fill='white'
+                viewBox='0 0 24 24'
+                strokeWidth={1.5}
+                stroke='currentColor'
+                className='w-6 h-6'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  d='M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3'
+                />
+              </svg>
+            </div>
+          </a>
         </figure>
       </div>
     </>
