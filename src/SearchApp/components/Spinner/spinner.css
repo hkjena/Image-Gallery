@@ -46,7 +46,7 @@ input:focus {
   left: 50%;
   z-index: 2;
   display: block;
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   background: rgba(255, 255, 255, 0.2);
@@ -99,7 +99,7 @@ figure:hover > div.likes {
   cursor: pointer;
   opacity: 1;
 }
-figure:hover > a>div.downloads {
+figure:hover > a > div.downloads {
   cursor: pointer;
   opacity: 1;
 }
@@ -127,7 +127,7 @@ figure:hover > a>div.downloads {
   top: 0;
 }
 .sk-fading-circle .sk-circle:before {
-  content: '';
+  content: "";
   display: block;
   margin: 0 auto;
   width: 15%;
@@ -254,4 +254,21 @@ figure:hover > a>div.downloads {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+img {
+  animation: appear linear both;
+  animation-timeline: view();
+  animation-range: entry 25% cover 50%;
 }
