@@ -1,4 +1,10 @@
-const ImageCard = ({ image }) => {
+import type { UnsplashPhoto } from "../../APIs/types";
+
+interface ImageCardProps {
+  image: UnsplashPhoto;
+}
+
+const ImageCard = ({ image }: ImageCardProps) => {
   const { urls, alt_description, likes, links } = image;
   return (
     <>
@@ -6,7 +12,7 @@ const ImageCard = ({ image }) => {
         <figure className='relative'>
           <img
             src={urls.regular}
-            alt={alt_description}
+            alt={alt_description ?? ""}
             className='w-full h-auto rounded shadow-full'
             style={{
               height: "auto",
@@ -29,9 +35,7 @@ const ImageCard = ({ image }) => {
               />
             </svg>
 
-            {<span className='text-xl'>{likes}</span> || (
-              <span className='text-xl'>0</span>
-            )}
+            <span className='text-xl'>{likes || 0}</span>
           </div>
           <a href={`${links?.download}&force=true`} download>
             <div className='downloads text-white bg-black bg-opacity-50 rounded px-2 py-2'>

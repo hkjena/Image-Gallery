@@ -1,6 +1,11 @@
 import ImageCard from "./ImageCard";
+import type { UnsplashPhoto } from "../../APIs/types";
 
-const ImageList = ({ photos }) => {
+interface ImageListProps {
+  photos: UnsplashPhoto[];
+}
+
+const ImageList = ({ photos }: ImageListProps) => {
   return (
     <>
       <div id='photos' className='photos'>
