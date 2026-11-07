@@ -1,5 +1,7 @@
 # Image Gallery
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d42b2fb9-346a-470d-90cc-11e533351796/deploy-status)](https://app.netlify.com/sites/unsplashgallery/deploys)
+
 A React photo gallery built with TypeScript, Vite, Tailwind CSS, and the Unsplash API. Browse random photos or search the Unsplash collection.
 
 ## Requirements
@@ -54,3 +56,7 @@ Never commit a real API key. Vite exposes `VITE_` variables to client-side code,
 - [GitHub Copilot instructions](./.github/copilot-instructions.md)
 
 Contributions from AI assistants should follow the same project checks as other changes: run tests, lint, and the production build when relevant.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
