@@ -97,6 +97,7 @@ describe("photo search", () => {
       await screen.findByText("Unable to load photos: Service unavailable"),
     ).toBeTruthy();
     expect(await screen.findByRole("button", { name: "Search" })).toBeTruthy();
+    expect(screen.queryByRole("status")).toBeNull();
   });
 
   it("shows an error when the initial photo request fails", async () => {
