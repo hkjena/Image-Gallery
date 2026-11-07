@@ -1,18 +1,18 @@
 import { useState, type FormEvent } from "react";
 
 interface SearchBarProps {
-  OnSubmit: (term: string) => void | Promise<void>;
-  visibility: boolean;
+  onSubmit: (term: string) => void | Promise<void>;
+  isSearching: boolean;
 }
 
-const SearchBar = ({ OnSubmit, visibility }: SearchBarProps) => {
+const SearchBar = ({ onSubmit, isSearching }: SearchBarProps) => {
   const [term, setTerm] = useState("");
   const formSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     e.currentTarget.querySelector("input")?.blur();
     if (!term) return;
     if (!term.trim()) return;
-    OnSubmit(term);
+    onSubmit(term);
     setTerm("");
   };
   return (
@@ -35,7 +35,7 @@ const SearchBar = ({ OnSubmit, visibility }: SearchBarProps) => {
             aria-hidden='true'
             role='status'
             className={`inline w-5 h-5 mr-1 text-white${
-              visibility ? " hidden" : ""
+              isSearching ? "" : " hidden"
             }`}
             style={{
               animation: "1s linear infinite wheel",
@@ -53,7 +53,7 @@ const SearchBar = ({ OnSubmit, visibility }: SearchBarProps) => {
               fill='currentColor'
             />
           </svg>
-          {visibility ? "Search" : "Searching..."}{" "}
+          {isSearching ? "Searching..." : "Search"}{" "}
         </button>
       </div>
     </form>
