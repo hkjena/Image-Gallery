@@ -1,0 +1,183 @@
+#photos {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1px;
+  column-gap: 1rem;
+  row-gap: 0;
+  max-width: 1600px;
+  margin: 1.75rem auto 0;
+  padding: 0 1.25rem 1rem;
+}
+
+.photo-card {
+  min-width: 0;
+  padding-bottom: 1rem;
+  animation: photo-enter 450ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.photo-card:nth-child(4n + 2) {
+  animation-delay: 45ms;
+}
+
+.photo-card:nth-child(4n + 3) {
+  animation-delay: 90ms;
+}
+
+.photo-card:nth-child(4n + 4) {
+  animation-delay: 135ms;
+}
+
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 1rem;
+  background: #e2e8f0;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 8%);
+  isolation: isolate;
+}
+
+.photo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition:
+    transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 300ms ease;
+}
+
+.photo-actions {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 0.75rem 0.75rem;
+  color: #fff;
+  background: linear-gradient(transparent, rgb(15 23 42 / 72%));
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.photo-likes,
+.photo-download {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 9999px;
+  background: rgb(15 23 42 / 62%);
+  padding: 0 0.8rem;
+  color: #fff;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.photo-likes {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.photo-download {
+  width: 2.5rem;
+  padding: 0;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.photo-download:hover {
+  background: rgb(124 58 237 / 90%);
+  transform: translateY(-2px);
+}
+
+.photo-download:focus-visible {
+  outline: 3px solid #c4b5fd;
+  outline-offset: 3px;
+}
+
+.photo-frame:hover .photo-image,
+.photo-card:focus-within .photo-image {
+  transform: scale(1.035);
+}
+
+.photo-frame:hover .photo-actions,
+.photo-card:focus-within .photo-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1100px) {
+  #photos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  #photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.75rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .photo-card {
+    padding-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #photos {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 34rem;
+  }
+}
+
+@media (hover: none) {
+  .photo-actions {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes photo-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-card {
+    animation: none;
+  }
+
+  .photo-image,
+  .photo-actions,
+  .photo-download {
+    transition: none;
+  }
+}
+
+.search-spinner {
+  animation: wheel 1s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-spinner {
+    animation: none;
+  }
+}

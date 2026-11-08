@@ -1,5 +1,7 @@
 export interface UnsplashPhoto {
   id: string;
+  width: number;
+  height: number;
   urls: {
     regular: string;
   };

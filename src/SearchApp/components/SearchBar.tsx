@@ -35,10 +35,7 @@ const SearchBar = ({ onSubmit, isSearching }: SearchBarProps) => {
             <svg
             aria-hidden='true'
             role='status'
-            className='inline w-5 h-5 mr-1 text-white'
-            style={{
-              animation: "1s linear infinite wheel",
-            }}
+            className='search-spinner inline w-5 h-5 mr-1 text-white'
             viewBox='0 0 100 101'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
