@@ -18,6 +18,8 @@ const mockGet = vi.mocked(unsplash.get);
 
 const createPhoto = (id: string, description = id): UnsplashPhoto => ({
   id,
+  width: 1200,
+  height: 800,
   urls: { regular: `https://images.example/${id}.jpg` },
   alt_description: description,
   likes: 1,

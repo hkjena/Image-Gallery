@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className='mt-10 flex flex-wrap justify-center bg-purple-200 items-center py-1 fixed bottom-0 w-full'>
+    <footer className='relative z-10 mt-auto flex w-full flex-wrap items-center justify-center bg-purple-200 py-1'>
       &copy; <p>Copyright {new Date().getFullYear()}.</p>
       <p>Made With </p>
       <svg
@@ -22,7 +22,7 @@ const Footer = () => {
           Harekrishna Jena
         </a>
       </span>
-    </div>
+    </footer>
   );
 };
 

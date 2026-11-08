@@ -54,22 +54,24 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div className='flex min-h-screen flex-col'>
       <Header />
       <SearchBar onSubmit={formSubmit} isSearching={isSearching} />
-      {errorMessage ? (
-        <p role='alert' className='my-6 text-center text-red-700'>
-          {errorMessage}
-        </p>
-      ) : visibility === "no" ? (
-        <NotFound />
-      ) : photos.length ? (
-        <ImageList photos={photos} />
-      ) : (
-        <Spinner />
-      )}
+      <main className='flex flex-1 flex-col'>
+        {errorMessage ? (
+          <p role='alert' className='my-6 text-center text-red-700'>
+            {errorMessage}
+          </p>
+        ) : visibility === "no" ? (
+          <NotFound />
+        ) : photos.length ? (
+          <ImageList photos={photos} />
+        ) : (
+          <Spinner />
+        )}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -9,6 +9,7 @@ A React photo gallery built with TypeScript, Vite, Tailwind CSS, and the Unsplas
 - Node.js 20.19 or newer, or 22.12 or newer
 - npm
 - An Unsplash API access key
+- Safari 16.4 or newer (required by Tailwind CSS 4)
 
 ## Getting started
 
